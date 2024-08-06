@@ -2,11 +2,17 @@ package racingcar.domain;
 
 public class Car {
 
-    private Name name;
-    private Position position;
+    private final Name name;
+    private final Position position;
 
     public Car(String name) {
         this.name = new Name(name);
         this.position = new Position();
+    }
+
+    public void moveOrStay(int standard) {
+        if (standard >= 4) {
+            position.goForward();
+        }
     }
 }

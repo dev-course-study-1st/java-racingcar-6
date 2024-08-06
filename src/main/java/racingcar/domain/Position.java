@@ -7,4 +7,8 @@ public class Position {
     public Position() {
         this.value = 0;
     }
+
+    public void goForward() {
+        this.value++;
+    }
 }
