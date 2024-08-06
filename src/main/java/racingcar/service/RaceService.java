@@ -6,6 +6,7 @@ import java.util.Map;
 import racingcar.domain.Car;
 import racingcar.domain.CarGarage;
 import racingcar.domain.RoundResult;
+import racingcar.domain.Winner;
 import racingcar.util.generator.NumberGenerator;
 
 public class RaceService {
@@ -33,4 +34,9 @@ public class RaceService {
         return new RoundResult(result);
     }
 
+    public Winner findWinner(CarGarage carGarage) {
+        int maxPosition = carGarage.calculateMaxPosition();
+        List<String> cars = carGarage.getCarsOnMaxPosition(maxPosition);
+        return new Winner(cars);
+    }
 }

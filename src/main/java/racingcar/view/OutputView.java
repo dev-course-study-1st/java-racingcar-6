@@ -2,6 +2,7 @@ package racingcar.view;
 
 import java.util.Map;
 import racingcar.domain.RoundResult;
+import racingcar.domain.Winner;
 
 public class OutputView {
 
@@ -16,4 +17,11 @@ public class OutputView {
         System.out.println(sb);
     }
 
+    public static void printWinner(Winner winner) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("최종 우승자 : ");
+        String winners = String.join(", ", winner.value());
+        sb.append(winners);
+        System.out.println(sb);
+    }
 }
