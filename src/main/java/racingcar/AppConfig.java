@@ -4,6 +4,7 @@ import java.util.List;
 import racingcar.controller.RaceController;
 import racingcar.util.ConverterHolder;
 import racingcar.util.StringToCarGarageConverter;
+import racingcar.util.StringToTryCountConverter;
 
 public class AppConfig {
 
@@ -14,7 +15,8 @@ public class AppConfig {
 
     private void setConverters() {
         ConverterHolder.setConverters(List.of(
-                new StringToCarGarageConverter()
+                new StringToCarGarageConverter(),
+                new StringToTryCountConverter()
         ));
     }
 
