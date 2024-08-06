@@ -1,10 +1,5 @@
 package racingcar.domain;
 
-public class Name {
+public record Name(String value) {
 
-    private final String value;
-
-    public Name(String value) {
-        this.value = value;
-    }
 }

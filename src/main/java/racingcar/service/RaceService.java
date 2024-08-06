@@ -1,8 +1,11 @@
 package racingcar.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import racingcar.domain.Car;
 import racingcar.domain.CarGarage;
+import racingcar.domain.RoundResult;
 import racingcar.util.generator.NumberGenerator;
 
 public class RaceService {
@@ -13,12 +16,21 @@ public class RaceService {
         this.numberGenerator = numberGenerator;
     }
 
-    public void race(CarGarage garage) {
+    public RoundResult race(CarGarage garage) {
         List<Car> cars = garage.getCars();
         for (Car car : cars) {
             int standard = numberGenerator.generate();
             car.moveOrStay(standard);
         }
+        return toResult(cars);
+    }
+
+    private RoundResult toResult(List<Car> cars) {
+        Map<String, Integer> result = new HashMap<>();
+        for (Car car : cars) {
+            result.put(car.getName(), car.getPosition());
+        }
+        return new RoundResult(result);
     }
 
 }
