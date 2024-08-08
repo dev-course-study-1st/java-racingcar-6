@@ -8,5 +8,5 @@ public class RandomNumberGenerator implements NumberGenerator {
     public int generate() {
         return Randoms.pickNumberInRange(GameNumber.MIN.getNumber(), GameNumber.MAX.getNumber());
     }
-    
+
 }

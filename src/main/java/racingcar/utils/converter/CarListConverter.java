@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CarListConverter {
 
-    public static CarList convert(String[] carNames){
+    public CarList convert(String[] carNames){
         List<Car> carList = Arrays.stream(carNames)
                 .map(name -> new Car(new Name(name), new Position(GameNumber.START_POSITION.getNumber())))
                 .toList();

@@ -3,6 +3,8 @@ package racingcar.model;
 import racingcar.utils.enums.GameNumber;
 import racingcar.utils.generator.NumberGenerator;
 
+import java.util.HashMap;
+
 public class Car {
     private Name name;
     private Position position;
@@ -10,6 +12,14 @@ public class Car {
     public Car(Name name, Position position) {
         this.name = name;
         this.position = position;
+    }
+
+    public String getName(){
+        return name.getValue();
+    }
+
+    public int getPosition(){
+        return position.getDistance();
     }
 
     private void move() {

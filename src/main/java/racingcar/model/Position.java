@@ -7,6 +7,10 @@ public class Position {
         this.distance = distance;
     }
 
+    public int getDistance(){
+        return distance;
+    }
+
     public void increment(){
         distance++;
     }
