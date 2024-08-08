@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import racingcar.utils.enums.GameNumber;
 import racingcar.utils.generator.NumberGenerator;
 
 public class Car {
@@ -16,7 +17,7 @@ public class Car {
     }
 
     public void tryMove(NumberGenerator numberGenerator) {
-        if (numberGenerator.generate() >= 4) {
+        if (numberGenerator.generate() >= GameNumber.MOVE_STANDARD.getNumber()) {
             move();
         }
     }
