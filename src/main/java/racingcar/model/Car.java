@@ -11,6 +11,10 @@ public class Car {
         this.position = GameNumber.DEFAULT_FORWARD_COUNT.getNumber();
     }
 
+    public void moveForward() {
+        this.position++;
+    }
+
     public String getName() {
         return name;
     }
