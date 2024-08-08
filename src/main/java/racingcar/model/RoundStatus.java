@@ -8,4 +8,9 @@ public class RoundStatus {
     public RoundStatus(HashMap<String, Integer> status) {
         this.status = status;
     }
+
+    public HashMap<String, Integer> getStatus() {
+        return status;
+    }
+
 }
