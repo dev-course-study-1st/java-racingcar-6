@@ -13,13 +13,13 @@ public class InputView {
         this.numberValidator = numberValidator;
     }
 
-    public String[] getNames() {
+    public String[] getCarNames() {
         System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return nameValidator.validate(input);
     }
 
-    public int getNumber() {
+    public int getAttemptCount() {
         System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return numberValidator.validate(input);
