@@ -3,13 +3,12 @@ package racingcar.model;
 import racingcar.utils.generator.NumberGenerator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class CarList {
+public class Cars {
     private final List<Car> carList;
 
-    public CarList(List<Car> carList) {
+    public Cars(List<Car> carList) {
         this.carList = carList;
     }
 

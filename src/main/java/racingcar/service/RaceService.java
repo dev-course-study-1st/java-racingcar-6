@@ -1,30 +1,28 @@
 package racingcar.service;
 
 import racingcar.model.Car;
-import racingcar.model.CarList;
+import racingcar.model.Cars;
 import racingcar.model.RoundStatus;
+import racingcar.model.Winners;
 import racingcar.utils.generator.NumberGenerator;
-import racingcar.view.InputView;
 
 import java.util.HashMap;
 import java.util.List;
 
 public class RaceService {
-    private final CarList carList;
     private final NumberGenerator numberGenerator;
 
-    public RaceService(CarList carList, NumberGenerator numberGenerator) {
-        this.carList = carList;
+    public RaceService(NumberGenerator numberGenerator) {
         this.numberGenerator = numberGenerator;
     }
 
-    public RoundStatus race(){
-        carList.moveCars(numberGenerator);
-        return getRoundStatus();
+    public RoundStatus race(Cars cars){
+        cars.moveCars(numberGenerator);
+        return getRoundStatus(cars);
     }
 
-    public RoundStatus getRoundStatus() {
-        return new RoundStatus(createRoundStatus(carList.getCarList()));
+    public RoundStatus getRoundStatus(Cars cars) {
+        return new RoundStatus(createRoundStatus(cars.getCarList()));
     }
 
     public HashMap<String, Integer> createRoundStatus(List<Car> carList) {
@@ -34,9 +32,15 @@ public class RaceService {
         }
         return roundStatus;
     }
-
-    public List<Car> getWinners(){
-        return carList.getWinners();
+    
+    public Winners getWinners(Cars cars) {
+        return new Winners(findWinners(cars));
     }
 
+    public List<String> findWinners(Cars cars){
+       return cars.getWinners()
+                .stream()
+                .map(Car::getName)
+                .toList();
+    }
 }
