@@ -1,26 +1,26 @@
 package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.utils.NameValidator;
-import racingcar.utils.NumberValidator;
+import racingcar.utils.enums.GameMessage;
+import racingcar.utils.validator.Validator;
 
 public class InputView {
-    private final NameValidator nameValidator;
-    private final NumberValidator numberValidator;
+    private final Validator<String[]> nameValidator;
+    private final Validator<Integer> numberValidator;
 
-    public InputView(NameValidator nameValidator, NumberValidator numberValidator) {
+    public InputView(Validator<String[]> nameValidator, Validator<Integer> numberValidator) {
         this.nameValidator = nameValidator;
         this.numberValidator = numberValidator;
     }
 
     public String[] getNames() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+        System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return nameValidator.validate(input);
     }
 
-    public String getNumber() {
-        System.out.println("시도할 회수는 몇회인가요?");
+    public int getNumber() {
+        System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return numberValidator.validate(input);
     }

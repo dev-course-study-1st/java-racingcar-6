@@ -1,7 +1,10 @@
-package racingcar.utils;
+package racingcar.utils.validator;
 
-public class NameValidator {
+import racingcar.utils.enums.GameMessage;
 
+public class NameValidator implements Validator<String[]> {
+
+    @Override
     public String[] validate(String input) {
         String[] names = input.split(",");
         for (String name : names) {
@@ -12,6 +15,6 @@ public class NameValidator {
 
     public void validateLength(String name) {
         if (name.length() > 5)
-            throw new IllegalArgumentException("유효하지 않은 길이의 이름입니다.");
+            throw new IllegalArgumentException(GameMessage.INVALID_CAR_NAME.toString());
     }
 }
