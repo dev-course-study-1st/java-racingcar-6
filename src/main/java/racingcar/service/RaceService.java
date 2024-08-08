@@ -18,7 +18,7 @@ public class RaceService {
     }
 
     public RoundResult race(CarGarage garage) {
-        List<Car> cars = garage.getCars();
+        List<Car> cars = garage.cars();
         for (Car car : cars) {
             int standard = numberGenerator.generate();
             car.moveOrStay(standard);

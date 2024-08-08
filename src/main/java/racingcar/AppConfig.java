@@ -3,9 +3,9 @@ package racingcar;
 import java.util.List;
 import racingcar.controller.RaceController;
 import racingcar.service.RaceService;
-import racingcar.util.ConverterHolder;
-import racingcar.util.StringToCarGarageConverter;
-import racingcar.util.StringToTryCountConverter;
+import racingcar.util.converter.ConverterHolder;
+import racingcar.util.converter.StringToCarGarageConverter;
+import racingcar.util.converter.StringToTryCountConverter;
 import racingcar.util.generator.NumberGenerator;
 import racingcar.util.generator.RandomNumberGenerator;
 

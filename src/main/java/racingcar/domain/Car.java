@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import static racingcar.util.Const.*;
+
 public class Car {
 
     private final Name name;
@@ -11,7 +13,7 @@ public class Car {
     }
 
     public void moveOrStay(int standard) {
-        if (standard >= 4) {
+        if (standard >= MOVING_STANDARD.getValue()) {
             position.goForward();
         }
     }

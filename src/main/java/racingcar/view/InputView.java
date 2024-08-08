@@ -3,7 +3,7 @@ package racingcar.view;
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.domain.CarGarage;
 import racingcar.domain.TryCount;
-import racingcar.util.ConverterHolder;
+import racingcar.util.converter.ConverterHolder;
 
 public class InputView {
 
