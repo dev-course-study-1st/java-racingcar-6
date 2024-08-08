@@ -7,17 +7,18 @@ import racingcar.utils.validator.InputValidator;
 
 public class InputView {
 
-    static InputValidator inputValidator = new InputValidator();
 
     public static String[] racingCarNameInput() {
-        System.out.println(GameMessage.CAR_NAME_REQUEST_MESSAGE);
-        return Console.readLine().split(",");
+        System.out.println(GameMessage.CAR_NAME_REQUEST_MESSAGE.getMessage());
+        String carNameInput = Console.readLine();
+        InputValidator.isCarNameInput(carNameInput);
+        return carNameInput.split(",");
     }
 
     public static Integer tryCountInput() {
-        System.out.println(GameMessage.TRY_COUNT_REQUEST_MESSAGE);
+        System.out.println(GameMessage.TRY_COUNT_REQUEST_MESSAGE.getMessage());
         String tryCount = Console.readLine();
-        inputValidator.isInteger(tryCount);
+        InputValidator.isInteger(tryCount);
         return Integer.parseInt(tryCount);
     }
 }
