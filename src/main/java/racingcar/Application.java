@@ -7,5 +7,6 @@ public class Application {
         AppConfig config = new AppConfig();
         RaceController raceController = config.setSystem();
         raceController.run();
+        config.clear();
     }
 }

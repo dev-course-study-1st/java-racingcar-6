@@ -31,4 +31,7 @@ public class AppConfig {
         ));
     }
 
+    public void clear() {
+        ConverterHolder.clearHolder();
+    }
 }
