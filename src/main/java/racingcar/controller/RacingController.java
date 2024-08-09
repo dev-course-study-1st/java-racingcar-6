@@ -1,10 +1,9 @@
 package racingcar.controller;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.model.Car;
 import racingcar.service.RacingService;
 import racingcar.util.constant.NumberEnum;
-import racingcar.util.constant.StringEnum;
+import racingcar.util.valid.RoundValidator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -24,14 +23,13 @@ public class RacingController {
     private void run() throws IllegalArgumentException{
         String names = service.validateName(InputView.printInputName());
         List<Car> cars = service.createCars(names);
-        int round = Integer.parseInt(InputView.printInputRound());
-
-        play(cars, round);
+        String round = new RoundValidator().validate(InputView.printInputRound());
+        playRaceGame(cars, Integer.parseInt(round));
     }
 
-    private void play(List<Car> cars, int round) {
-        for(int r = NumberEnum.ZERO.getNumber(); r < round; r++) {
-            service.play(cars);
+    private void playRaceGame(List<Car> cars, int round) {
+        for(int r = NumberEnum.ZERO.getValue(); r < round; r++) {
+            service.moveOrWait(cars);
             OutputView.printMoveDistance(cars);
         }
 
