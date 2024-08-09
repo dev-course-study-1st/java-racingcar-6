@@ -13,7 +13,7 @@ public class NameValidator implements Validator<String[]> {
         return names;
     }
 
-    public void validateLength(String name) {
+    private void validateLength(String name) {
         if (name.length() > 5)
             throw new IllegalArgumentException(GameMessage.INVALID_CAR_NAME.toString());
     }

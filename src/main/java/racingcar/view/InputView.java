@@ -2,7 +2,7 @@ package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.model.Cars;
-import racingcar.utils.converter.CarListConverter;
+import racingcar.utils.converter.CarsConverter;
 import racingcar.utils.enums.GameMessage;
 import racingcar.utils.validator.Validator;
 
@@ -10,17 +10,17 @@ public class InputView {
 
     private final Validator<String[]> nameValidator;
     private final Validator<Integer> numberValidator;
-    private final CarListConverter carListConverter;
+    private final CarsConverter carsConverter;
 
-    public InputView(Validator<String[]> nameValidator, Validator<Integer> numberValidator, CarListConverter carListConverter) {
+    public InputView(Validator<String[]> nameValidator, Validator<Integer> numberValidator, CarsConverter carsConverter) {
         this.nameValidator = nameValidator;
         this.numberValidator = numberValidator;
-        this.carListConverter = carListConverter;
+        this.carsConverter = carsConverter;
     }
 
     public Cars getCarNames() {
         String[] carNames = inputCarNames();
-        return carListConverter.convert(carNames);
+        return carsConverter.convert(carNames);
     }
 
     private String[] inputCarNames() {

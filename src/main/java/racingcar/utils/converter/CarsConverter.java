@@ -9,7 +9,7 @@ import racingcar.utils.enums.GameNumber;
 import java.util.Arrays;
 import java.util.List;
 
-public class CarListConverter {
+public class CarsConverter {
 
     public Cars convert(String[] carNames){
         List<Car> carList = Arrays.stream(carNames)
