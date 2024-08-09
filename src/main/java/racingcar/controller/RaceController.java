@@ -18,7 +18,7 @@ public class RaceController {
     }
 
     public void run(){
-        Cars cars = inputView.inputCarNames();
+        Cars cars = inputView.getCarNames();
         int attemptCount = inputView.getAttemptCount();
         for (int i = 0; i < attemptCount; i++) {
             RoundStatus roundStatus = raceService.race(cars);

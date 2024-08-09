@@ -7,7 +7,6 @@ import racingcar.model.Winners;
 import racingcar.utils.generator.NumberGenerator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class RaceService {

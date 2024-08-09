@@ -16,12 +16,12 @@ public class InputView {
         this.numberValidator = numberValidator;
         this.carListConverter = carListConverter;
     }
-    public Cars inputCarNames(){
-        String[] carNames = getCarNames();
+    public Cars getCarNames(){
+        String[] carNames = inputCarNames();
         return carListConverter.convert(carNames);
     }
 
-    public String[] getCarNames() {
+    public String[] inputCarNames() {
         System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return nameValidator.validate(input);
