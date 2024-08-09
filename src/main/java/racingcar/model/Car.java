@@ -31,12 +31,13 @@ public class Car {
         }
     }
 
-    public boolean isAheadOf(Car car){
-        return this.position.isAheadOf(car.position);
+    public Car getAheadOf(Car car) {
+        if(this.position.isAheadOf(car.position))
+            return this;
+        return car;
     }
 
     public boolean isDrawWith(Car car){
         return this.position.isDrawWith(car.position);
     }
-
 }

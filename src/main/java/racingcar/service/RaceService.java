@@ -5,8 +5,6 @@ import racingcar.model.Cars;
 import racingcar.model.RoundStatus;
 import racingcar.model.Winners;
 import racingcar.utils.generator.NumberGenerator;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class RaceService {
@@ -26,19 +24,21 @@ public class RaceService {
     }
 
     private Cars findWinners(Cars cars) {
-        List<Car> carList = cars.getCarList();
-        Car winner = cars.getCarList().get(0);
-        for (Car car : carList) {
-            if (car.isAheadOf(winner)) {
-                winner = car;
-            }
-        }
-        List<Car> winners = new ArrayList<>();
-        for (Car car : carList) {
-            if (car.isDrawWith(winner))
-                winners.add(car);
-        }
+        Car winner = findWinner(cars);
+        List<Car> winners = cars.getCarList()
+                .stream()
+                .filter(car -> car.isDrawWith(winner))
+                .toList();
         return new Cars(winners);
+    }
+
+    private Car findWinner(Cars cars) {
+        List<Car> carList = cars.getCarList();
+        Car winner = carList.get(0);
+        for (Car car : carList) {
+            winner = car.getAheadOf(winner);
+        }
+        return winner;
     }
 
 }
