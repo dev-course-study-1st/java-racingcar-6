@@ -1,6 +1,7 @@
 package racingcar.model;
 
 public class Name {
+
     private String value;
 
     public Name(String value) {

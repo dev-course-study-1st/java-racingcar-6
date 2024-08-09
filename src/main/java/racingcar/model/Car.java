@@ -3,9 +3,8 @@ package racingcar.model;
 import racingcar.utils.enums.GameNumber;
 import racingcar.utils.generator.NumberGenerator;
 
-import java.util.HashMap;
-
 public class Car {
+
     private Name name;
     private Position position;
 

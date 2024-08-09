@@ -1,6 +1,7 @@
 package racingcar.utils.enums;
 
 public enum GameNumber {
+
     MIN(0),
     MAX(9),
     START_POSITION(0),

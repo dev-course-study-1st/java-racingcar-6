@@ -1,6 +1,7 @@
 package racingcar.model;
 
 public class Position {
+
     private int distance;
 
     public Position(int distance) {

@@ -7,6 +7,7 @@ import racingcar.utils.enums.GameMessage;
 import racingcar.utils.validator.Validator;
 
 public class InputView {
+
     private final Validator<String[]> nameValidator;
     private final Validator<Integer> numberValidator;
     private final CarListConverter carListConverter;
@@ -16,7 +17,8 @@ public class InputView {
         this.numberValidator = numberValidator;
         this.carListConverter = carListConverter;
     }
-    public Cars getCarNames(){
+
+    public Cars getCarNames() {
         String[] carNames = inputCarNames();
         return carListConverter.convert(carNames);
     }
@@ -32,4 +34,5 @@ public class InputView {
         String input = Console.readLine();
         return numberValidator.validate(input);
     }
+
 }

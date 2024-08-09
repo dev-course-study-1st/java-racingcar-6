@@ -11,4 +11,5 @@ public class NumberValidator implements Validator<Integer> {
         }
         return Integer.parseInt(input);
     }
+
 }

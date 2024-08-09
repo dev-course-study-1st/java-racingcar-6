@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OutputView {
+
     public void printRaceStatus(RoundStatus roundStatus) {
         StringBuilder sb = new StringBuilder();
         Map<String, Integer> status = roundStatus.getStatus();
@@ -34,4 +35,5 @@ public class OutputView {
         }
         System.out.println(sb.toString());
     }
+
 }
