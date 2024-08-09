@@ -17,4 +17,5 @@ public class NameValidator implements Validator<String[]> {
         if (name.length() > 5)
             throw new IllegalArgumentException(GameMessage.INVALID_CAR_NAME.toString());
     }
+    
 }

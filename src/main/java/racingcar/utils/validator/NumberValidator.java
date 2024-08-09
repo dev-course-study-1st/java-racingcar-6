@@ -6,7 +6,7 @@ public class NumberValidator implements Validator<Integer> {
 
     @Override
     public Integer validate(String input) {
-        if (!input.matches("^[^0]\\d*")) {
+        if (!input.matches("^[1-9]\\d*$")) {
             throw new IllegalArgumentException(GameMessage.INVALID_ATTEMPT_COUNT.toString());
         }
         return Integer.parseInt(input);
