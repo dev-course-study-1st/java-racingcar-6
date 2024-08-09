@@ -30,7 +30,7 @@ public class InputView {
     }
 
     public int getAttemptCount() {
-        System.out.println(GameMessage.INPUT_CAR_NAMES);
+        System.out.println(GameMessage.INPUT_ATTEMPT_COUNT);
         String input = Console.readLine();
         return numberValidator.validate(input);
     }
