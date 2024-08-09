@@ -22,7 +22,8 @@ public class MoveOrWaitValidatorTest {
     void normalTestForMove() {
         Generator moveGenerator = new MoveGenerator();
         assertThat(mwValidator.validate(moveGenerator.generate()))
-                .isEqualTo(MoveOrWait.MOVE.getValue());
+                .isEqualTo(MoveOrWait.MOVE.getValue())
+                .isEqualTo(1);
     }
 
     @Test
@@ -30,6 +31,7 @@ public class MoveOrWaitValidatorTest {
     void normalTestForWait() {
         Generator waitGenerator = new WaitGenerator();
         assertThat(mwValidator.validate(waitGenerator.generate()))
-                .isEqualTo(MoveOrWait.WAIT.getValue());
+                .isEqualTo(MoveOrWait.WAIT.getValue())
+                .isEqualTo(0);
     }
 }
