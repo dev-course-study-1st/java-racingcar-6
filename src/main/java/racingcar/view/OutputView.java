@@ -18,27 +18,26 @@ public class OutputView {
         Map<String, Integer> status = roundStatus.getStatus();
         for (String name : status.keySet()) {
             int distance = status.get(name);
-            sb.append(name+" : ");
-            for (int i = 0; i < distance; i++) {
-                sb.append("-");
-            }
-            sb.append("\n");
+            sb.append(createRaceEntry(name, distance) + "\n");
         }
         System.out.println(sb.toString());
+    }
+
+    private String createRaceEntry(String name, int distance){
+        StringBuilder sb = new StringBuilder();
+        sb.append(name + " : ");
+        for (int i = 0; i < distance; i++) {
+            sb.append("-");
+        }
+        return sb.toString();
     }
 
     public void printWinners(Winners winners) {
         StringBuilder sb = new StringBuilder();
         List<String> winnerNames = winners.getWinners();
         sb.append(GameMessage.OUTPUT_WINNERS);
-        for(int i =0;i<winnerNames.size();i++) {
-            sb.append(winnerNames.get(i));
-            if(i < winnerNames.size()-1) {
-                sb.append(", ");
-            }
-        }
+        sb.append(String.join(", ", winnerNames));
         System.out.println(sb.toString());
     }
-
 
 }
