@@ -6,6 +6,8 @@ public enum StringEnum {
     PRINT_COUNT("시도할 회수는 몇회인가요?"),
     PRINT_WINNERS("최종 우승자 : "),
     COMMA(","),
+    CONTAINS_LETTER_REGEX(".*[^-0-9].*"),
+    EMPTY_NAME_ERROR_MESSAGE("이름이 비어있습니다."),
     NAME_LENGTH_ERROR_MESSAGE("이름의 길이가 6자 이상입니다."),
     CONTAINS_LETTER_ERROR_MESSAGE("숫자가 아닌 문자가 포함되어 있습니다."),
     LESS_THAN_ONE_ERROR_MESSAGE("1보다 작은 숫자를 입력할 수 없습니다.");

@@ -2,10 +2,10 @@ package racingcar.util.valid;
 
 import racingcar.util.constant.NumberEnum;
 
-import static racingcar.util.constant.StringEnum.CONTAINS_LETTER_ERROR_MESSAGE;
-import static racingcar.util.constant.StringEnum.LESS_THAN_ONE_ERROR_MESSAGE;
+import static racingcar.util.constant.StringEnum.*;
 
 public class RoundValidator implements Validator<String> {
+
 
     @Override
     public String validate(String value) {
@@ -17,7 +17,7 @@ public class RoundValidator implements Validator<String> {
     }
 
     private RoundValidator canParseToInteger(String value) {
-        if (value.matches(".*[^-0-9].*")) {
+        if (value.matches(CONTAINS_LETTER_REGEX.toString())) {
             throw new IllegalArgumentException(CONTAINS_LETTER_ERROR_MESSAGE.toString());
         }
 
