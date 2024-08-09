@@ -25,7 +25,7 @@ public class RaceService {
         return new Winners(findWinners(cars));
     }
 
-    public Cars findWinners(Cars cars) {
+    private Cars findWinners(Cars cars) {
         List<Car> carList = cars.getCarList();
         Car winner = cars.getCarList().get(0);
         for (Car car : carList) {

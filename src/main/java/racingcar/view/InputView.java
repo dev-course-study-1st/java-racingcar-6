@@ -23,7 +23,7 @@ public class InputView {
         return carListConverter.convert(carNames);
     }
 
-    public String[] inputCarNames() {
+    private String[] inputCarNames() {
         System.out.println(GameMessage.INPUT_CAR_NAMES);
         String input = Console.readLine();
         return nameValidator.validate(input);
