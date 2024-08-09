@@ -9,18 +9,22 @@ import java.util.Map;
 
 public class OutputView {
 
+    public void printRaceResult() {
+        System.out.println(GameMessage.OUTPUT_ROUND_STATUS);
+    }
+
     public void printRaceStatus(RoundStatus roundStatus) {
         StringBuilder sb = new StringBuilder();
         Map<String, Integer> status = roundStatus.getStatus();
-        sb.append(GameMessage.OUTPUT_ROUND_STATUS+"\n");
         for (String name : status.keySet()) {
             int distance = status.get(name);
             sb.append(name+" : ");
             for (int i = 0; i < distance; i++) {
                 sb.append("-");
             }
-            System.out.println(sb.toString());
+            sb.append("\n");
         }
+        System.out.println(sb.toString());
     }
 
     public void printWinners(Winners winners) {
@@ -35,5 +39,6 @@ public class OutputView {
         }
         System.out.println(sb.toString());
     }
+
 
 }
