@@ -3,7 +3,6 @@ package racingcar.controller;
 import racingcar.model.Car;
 import racingcar.service.RacingService;
 import racingcar.util.constant.NumberEnum;
-import racingcar.util.valid.RoundValidator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -20,10 +19,10 @@ public class RacingController {
         run();
     }
 
-    private void run() throws IllegalArgumentException{
+    private void run() throws IllegalArgumentException {
         String names = service.validateName(InputView.printInputName());
         List<Car> cars = service.createCars(names);
-        String round = new RoundValidator().validate(InputView.printInputRound());
+        String round = service.validateRound(InputView.printInputRound());
         playRaceGame(cars, Integer.parseInt(round));
     }
 
