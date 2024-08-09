@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 public class RacingService {
 
     private final Validator<String> nameValidator;
-    private final Generator generator;
+    private final Generator randomGenerator;
 
     public RacingService(Validator<String> nameValidator, Generator generator) {
         this.nameValidator = nameValidator;
-        this.generator = generator;
+        this.randomGenerator = generator;
     }
     public String validateName(String s) {
         return nameValidator.validate(s);
@@ -28,9 +28,9 @@ public class RacingService {
                     .collect(Collectors.toList());
     }
 
-    public void play(List<Car> cars) {
+    public void moveOrWait(List<Car> cars) {
         for (Car car : cars) {
-            car.move(generator.generate());
+            car.moveOrWait(randomGenerator.generate());
         }
     }
 }

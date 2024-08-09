@@ -16,15 +16,8 @@ public enum NumberEnum {
         this.moveForward = forward;
     }
 
-    public int getNumber() {
+    public int getValue() {
         return this.moveForward;
     }
 
-    public static int getDistance(int forward) {
-        if(forward < LEAST_MOVE_AVAILABLE.moveForward) {
-            return ZERO.moveForward;
-        }
-
-        return forward;
-    }
 }

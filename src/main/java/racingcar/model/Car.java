@@ -1,14 +1,13 @@
 package racingcar.model;
 
-import camp.nextstep.edu.missionutils.Randoms;
-import racingcar.util.valid.MoveForwardValidator;
+import racingcar.util.valid.MoveOrWaitValidator;
 import racingcar.util.valid.Validator;
 
 public class Car {
     private String name;
     private int moveDistance;
 
-    private static final Validator<Integer> validator = new MoveForwardValidator();
+    private static final Validator<Integer> validator = new MoveOrWaitValidator();
 
     public Car(String name) {
         this.name = name;
@@ -22,7 +21,7 @@ public class Car {
         return moveDistance;
     }
 
-    public void move(int distance) {
+    public void moveOrWait(int distance) {
         moveDistance += validator.validate(distance);
     }
 
