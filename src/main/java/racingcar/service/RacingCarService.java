@@ -21,7 +21,7 @@ public class RacingCarService {
                 .forEach(Car::moveForward);
     }
 
-    public void playGame(Cars cars, int tryCount) {
+    public void playGame(Cars cars, Integer tryCount) {
         for (int i = 0; i < tryCount; i++) {
             moveCars(cars);
             OutputView.printCurrentPositions(cars);
