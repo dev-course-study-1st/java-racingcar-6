@@ -1,6 +1,7 @@
 package racingcar.util.constant;
 
 public enum MoveOrWait {
+
     WAIT(0),
     MOVE(1),
     LEAST_MOVE_AVAILABLE(4);

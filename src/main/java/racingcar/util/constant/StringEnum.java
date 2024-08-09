@@ -11,12 +11,12 @@ public enum StringEnum {
     LESS_THAN_ONE_ERROR_MESSAGE("1보다 작은 숫자를 입력할 수 없습니다.");
 
     private final String string;
+
     StringEnum(String string) {
         this.string = string;
     }
 
     public String toString() {
         return string;
-
     }
 }

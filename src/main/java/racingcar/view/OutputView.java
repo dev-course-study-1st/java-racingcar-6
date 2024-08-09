@@ -23,7 +23,6 @@ public class OutputView {
         System.out.println(StringEnum.PRINT_WINNERS + winners);
     }
 
-
     private static int getMax(List<Car> cars) {
         return cars.stream()
                     .mapToInt(Car::getLocation)

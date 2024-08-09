@@ -11,6 +11,7 @@ import java.util.List;
 public class RacingController {
 
     private final RacingService service;
+
     public RacingController(RacingService racingService) {
         this.service = racingService;
     }

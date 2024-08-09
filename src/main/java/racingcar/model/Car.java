@@ -4,6 +4,7 @@ import racingcar.util.valid.MoveOrWaitValidator;
 import racingcar.util.valid.Validator;
 
 public class Car {
+
     private final Name name;
     private final Location location;
     private static final Validator<Integer> validator = new MoveOrWaitValidator();
