@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class RaceServiceTest {
+    
     private RaceService raceService;
     private NumberGenerator numberGenerator;
 
