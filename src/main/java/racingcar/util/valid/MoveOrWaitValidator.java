@@ -1,15 +1,19 @@
 package racingcar.util.valid;
 
-import racingcar.util.constant.NumberEnum;
+import racingcar.util.constant.MoveOrWait;
 
 public class MoveOrWaitValidator implements Validator<Integer>{
 
     @Override
     public Integer validate(Integer value) {
-        if(value < NumberEnum.LEAST_MOVE_AVAILABLE.getValue()) {
-            return NumberEnum.ZERO.getValue();
+        return judgeMoveOrWait(value).getValue();
+    }
+
+    private MoveOrWait judgeMoveOrWait(Integer value) {
+        if(value < MoveOrWait.LEAST_MOVE_AVAILABLE.getValue()) {
+            return MoveOrWait.WAIT;
         }
 
-        return value;
+        return MoveOrWait.MOVE;
     }
 }
