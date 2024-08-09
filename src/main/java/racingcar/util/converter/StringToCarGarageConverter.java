@@ -30,6 +30,10 @@ public class StringToCarGarageConverter implements Converter<String, CarGarage> 
     }
 
     private void validateInput(String source) {
+        if (source.contains(" ")) {
+            throw new IllegalArgumentException("이름에 공백은 허용하지 않습니다.");
+        }
+
         Matcher matcher = Pattern.compile(REGEX).matcher(source);
         if (!matcher.matches()) {
             throw new IllegalArgumentException("문자와 쉼표(,)만 입력 해주세요.");

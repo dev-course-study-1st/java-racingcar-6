@@ -11,8 +11,15 @@ public class StringToTryCountConverter implements Converter<String, TryCount> {
 
     @Override
     public TryCount convert(String source) {
+        checkInput(source);
         int count = toInt(source);
         return new TryCount(count);
+    }
+
+    private void checkInput(String source) {
+        if (source.equals(" ")) {
+            throw new IllegalArgumentException("숫자를 입력해 주세요.");
+        }
     }
 
     private int toInt(String source) {
