@@ -5,8 +5,9 @@ import java.util.List;
 public class Winners {
     private final List<String> winners;
 
-    public Winners(List<String> winners) {
-        this.winners = winners;
+    public Winners(Cars cars)
+    {
+        this.winners = cars.carToString();
     }
 
     public List<String> getWinners() {

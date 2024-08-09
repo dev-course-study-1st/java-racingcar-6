@@ -17,7 +17,7 @@ public class RaceController {
         this.outputView = outputView;
     }
 
-    public void start(){
+    public void run(){
         Cars cars = inputView.inputCarNames();
         int attemptCount = inputView.getAttemptCount();
         for (int i = 0; i < attemptCount; i++) {

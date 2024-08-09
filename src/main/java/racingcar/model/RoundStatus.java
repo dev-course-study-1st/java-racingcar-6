@@ -1,15 +1,15 @@
 package racingcar.model;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class RoundStatus {
-    private final HashMap<String, Integer> status;
+    private final Map<String, Integer> status;
 
-    public RoundStatus(HashMap<String, Integer> status) {
-        this.status = status;
+    public RoundStatus(Cars cars) {
+        this.status = cars.carToMap();
     }
 
-    public HashMap<String, Integer> getStatus() {
+    public Map<String, Integer> getStatus() {
         return status;
     }
 

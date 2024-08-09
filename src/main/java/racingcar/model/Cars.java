@@ -2,8 +2,9 @@ package racingcar.model;
 
 import racingcar.utils.generator.NumberGenerator;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Cars {
     private final List<Car> carList;
@@ -22,18 +23,15 @@ public class Cars {
         return carList;
     }
 
-    public List<Car> getWinners() {
-        Car winner = carList.get(0);
-        for (Car car : carList) {
-            if (car.isAheadOf(winner))
-                winner = car;
-        }
-        List<Car> winners = new ArrayList<>();
-        for (Car car : carList) {
-            if (car.isDrawWith(winner))
-                winners.add(car);
-        }
-        return winners;
+    public List<String> carToString(){
+        return carList.stream()
+                .map(Car::getName)
+                .toList();
+    }
+
+    public Map<String,Integer> carToMap(){
+        return carList.stream()
+                .collect(Collectors.toMap(Car::getName, Car::getPosition)) ;
     }
 
 }

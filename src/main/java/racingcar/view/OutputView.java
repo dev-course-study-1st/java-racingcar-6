@@ -4,13 +4,13 @@ import racingcar.model.RoundStatus;
 import racingcar.model.Winners;
 import racingcar.utils.enums.GameMessage;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
     public void printRaceStatus(RoundStatus roundStatus) {
         StringBuilder sb = new StringBuilder();
-        HashMap<String, Integer> status = roundStatus.getStatus();
+        Map<String, Integer> status = roundStatus.getStatus();
         sb.append(GameMessage.OUTPUT_ROUND_STATUS+"\n");
         for (String name : status.keySet()) {
             int distance = status.get(name);
