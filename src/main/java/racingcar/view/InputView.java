@@ -12,6 +12,6 @@ public class InputView {
 
     public static String printInputRound() {
         System.out.println(StringEnum.PRINT_COUNT);
-        return Console.readLine();
+        return Console.readLine().replaceAll(" ", "");
     }
 }

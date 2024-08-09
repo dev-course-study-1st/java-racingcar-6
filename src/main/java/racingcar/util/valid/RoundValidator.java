@@ -9,8 +9,11 @@ public class RoundValidator implements Validator<String> {
 
     @Override
     public String validate(String value) {
-        return canParseToInteger(value)
-                .isPositiveRound(value);
+         canParseToInteger(value)
+                 .isPositiveRound(value)
+                 .finish();
+
+         return value;
     }
 
     private RoundValidator canParseToInteger(String value) {
@@ -21,11 +24,12 @@ public class RoundValidator implements Validator<String> {
         return this;
     }
 
-    private String isPositiveRound(String value) {
+    private RoundValidator isPositiveRound(String value) {
         if(Integer.parseInt(value) <= NumberEnum.ZERO.getValue()) {
             throw new IllegalArgumentException(LESS_THAN_ONE_ERROR_MESSAGE.toString());
         }
-        return value;
+
+        return this;
     }
 }
 
