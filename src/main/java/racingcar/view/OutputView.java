@@ -17,7 +17,7 @@ public class OutputView {
 
     public static void printWinners(List<Car> cars) {
         String winners = cars.stream()
-                .filter(car -> car.getMoveDistance() == getMax(cars))
+                .filter(car -> car.getLocation() == getMax(cars))
                 .map(Car::getName).collect(Collectors.joining(","));
 
         System.out.println(StringEnum.PRINT_WINNERS + winners);
@@ -26,7 +26,7 @@ public class OutputView {
 
     private static int getMax(List<Car> cars) {
         return cars.stream()
-                    .mapToInt(Car::getMoveDistance)
+                    .mapToInt(Car::getLocation)
                     .max()
                     .getAsInt();
     }

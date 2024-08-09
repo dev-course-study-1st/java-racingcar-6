@@ -4,32 +4,32 @@ import racingcar.util.valid.MoveOrWaitValidator;
 import racingcar.util.valid.Validator;
 
 public class Car {
-    private String name;
-    private int moveDistance;
-
+    private final Name name;
+    private final Location location;
     private static final Validator<Integer> validator = new MoveOrWaitValidator();
 
     public Car(String name) {
-        this.name = name;
+        this.name = new Name(name);
+        this.location = new Location();
     }
 
     public String getName() {
-        return name;
+        return name.getName();
     }
 
-    public int getMoveDistance() {
-        return moveDistance;
+    public int getLocation() {
+        return location.getLocation();
     }
 
     public void moveOrWait(int distance) {
-        moveDistance += validator.validate(distance);
+        location.changeLocation(validator.validate(distance));
     }
 
     @Override
     public String toString() {
-        return new StringBuilder(this.name)
+        return new StringBuilder(this.name.getName())
                     .append(" : ")
-                    .append("-".repeat(moveDistance))
+                    .append("-".repeat(location.getLocation()))
                     .toString();
 
     }
