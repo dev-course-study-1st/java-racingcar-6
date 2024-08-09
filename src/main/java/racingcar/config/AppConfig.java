@@ -2,7 +2,6 @@ package racingcar.config;
 
 import racingcar.controller.RacingController;
 import racingcar.service.RacingService;
-import racingcar.util.generate.MoveGenerator;
 import racingcar.util.generate.RandomGenerator;
 import racingcar.util.valid.NameValidator;
 
