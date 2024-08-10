@@ -1,5 +1,6 @@
 package racingcar.model;
 
+import racingcar.utils.NumberGenerator;
 import racingcar.utils.validator.InputValidator;
 
 import java.util.Arrays;
@@ -13,14 +14,7 @@ public class Cars {
         this.cars = generateCars(carsInput);
     }
 
-    private void validateCars(String[] carsInput) {
-        for (String carName : carsInput) {
-            InputValidator.isCarNameLength(carName);
-        }
-    }
-
     private List<Car> generateCars(String[] carsInput) {
-        validateCars(carsInput);
         return Arrays.stream(carsInput)
                 .map(Car::new)
                 .collect(Collectors.toList());
@@ -35,5 +29,10 @@ public class Cars {
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElseThrow(IllegalArgumentException::new);
+    }
+
+    public void moveAll(NumberGenerator numberGenerator) {
+        cars.stream()
+                .forEach(car -> car.moveForward(numberGenerator.generateRandomNumber()));
     }
 }

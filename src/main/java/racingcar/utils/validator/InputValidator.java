@@ -16,10 +16,4 @@ public class InputValidator {
             throw new IllegalArgumentException("영문자와 쉼표만 입력해주세요.");
         }
     }
-
-    public static void isCarNameLength(String inputString) {
-        if (inputString.length() > GameNumber.MAX_NAME_LENGTH.getNumber()) {
-            throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다.");
-        }
-    }
 }

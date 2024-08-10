@@ -3,6 +3,7 @@ package racingcar.service;
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.model.Car;
 import racingcar.model.Cars;
+import racingcar.utils.NumberGenerator;
 import racingcar.utils.constant.GameNumber;
 import racingcar.view.OutputView;
 
@@ -10,15 +11,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class RacingCarService {
-
-    public boolean isMovable() {
-        return Randoms.pickNumberInRange(GameNumber.RANDOM_MIN.getNumber(), GameNumber.RANDOM_MAX.getNumber()) >= GameNumber.IS_MOVABLE.getNumber();
-    }
+    private final NumberGenerator numberGenerator = new NumberGenerator();
 
     public void moveCars(Cars cars) {
-        cars.getCars().stream()
-                .filter(car -> isMovable())
-                .forEach(Car::moveForward);
+        cars.moveAll(numberGenerator);
     }
 
     public void playGame(Cars cars, Integer tryCount) {
