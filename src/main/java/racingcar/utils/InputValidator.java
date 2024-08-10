@@ -1,6 +1,4 @@
-package racingcar.utils.validator;
-
-import racingcar.utils.constant.GameNumber;
+package racingcar.utils;
 
 public class InputValidator {
     private final static String IS_INTEGER_PATTERN = "^[0-9]*$";

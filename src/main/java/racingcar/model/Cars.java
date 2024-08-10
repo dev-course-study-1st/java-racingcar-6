@@ -1,7 +1,6 @@
 package racingcar.model;
 
-import racingcar.utils.NumberGenerator;
-import racingcar.utils.validator.InputValidator;
+import racingcar.utils.RandomNumberGenerator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,19 +19,25 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public Integer getWinnerPosition() {
+    private Integer getWinnerPosition() {
         return cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    public void moveAll(NumberGenerator numberGenerator) {
+    public List<Car> getWinners() {
+        return cars.stream()
+                .filter(car -> car.getPosition().equals(getWinnerPosition()))
+                .collect(Collectors.toList());
+    }
+
+    public void moveAll(RandomNumberGenerator randomNumberGenerator, int min, int max) {
         cars.stream()
-                .forEach(car -> car.moveForward(numberGenerator.generateRandomNumber()));
+                .forEach(car -> car.moveForward(randomNumberGenerator.generateNumber(min, max)));
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }
